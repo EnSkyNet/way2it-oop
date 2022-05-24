@@ -30,8 +30,8 @@ public class Tulip extends Flower {
     }
 
     public Tulip(String color, double price, int quantity){
-        this.color = color;
-        this.price = price;
-        this.quantity = quantity;
+        setColor(color);
+        setPrice(price);
+        setQuantity(quantity);
     }
 }
