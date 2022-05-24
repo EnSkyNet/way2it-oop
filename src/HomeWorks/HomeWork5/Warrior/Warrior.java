@@ -1,6 +1,15 @@
 package HomeWorks.HomeWork5.Warrior;
 
 abstract class Warrior {
-    abstract void attack();
-    abstract void Warrior();
+
+    abstract int getHealth();
+
+    abstract int getDamage();
+
+    abstract void attack(int damage);
+
+    abstract String status();
+
+
+    //abstract void attack();
 }

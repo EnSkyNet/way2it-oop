@@ -1,6 +1,7 @@
 package HomeWorks.HomeWork5.Warrior;
 
-public class Sword extends Warrior {
+public class Arbalest extends Warrior {
+
     private int health;
     private int damage;
 
@@ -9,7 +10,7 @@ public class Sword extends Warrior {
     }
 
     public void setHealth(int health) {
-        int chance = (int) (Math.random() * 101 + 800);
+        int chance = (int) (Math.random() * 101 + 900);
         this.health = health * chance;
     }
 
@@ -18,7 +19,7 @@ public class Sword extends Warrior {
     }
 
     public void setDamage(int damage) {
-        int chance = (int) (Math.random() * 6 + 20);
+        int chance = (int) (Math.random() * 6 + 15);
         this.damage = damage * chance;
     }
 
@@ -30,12 +31,12 @@ public class Sword extends Warrior {
 
     @Override
     public String status() {
-        String s = ("Sword have health: " + getHealth() +
-                " and damage: " + getDamage());
+        String s = "Arbalest have health: " + getHealth() +
+                " and damage: " + getDamage();
         return s;
     }
 
-    public Sword(int damage, int health) {
+    public Arbalest(int damage, int health) {
         setHealth(health);
         setDamage(damage);
     }
