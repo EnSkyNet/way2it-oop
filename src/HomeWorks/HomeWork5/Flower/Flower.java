@@ -8,5 +8,8 @@ public class Flower {
     public double getPrice(){
         return 0;
     }
+    public int getQuantity(){
+        return 0;
+    }
 
 }
