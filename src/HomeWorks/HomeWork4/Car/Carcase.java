@@ -30,13 +30,29 @@ public class Carcase {
         this.width = width;
     }
 
+    public String getDrive() {
+        return drive;
+    }
+
+    public void setDrive(String drive) {
+        this.drive = drive;
+    }
+
     public String toString() {
-        System.out.println("Car size: " + getWidth() + "x" + getLength() + "x" + getHeight());
+        System.out.println("Car size: " + getWidth() + " x " + getLength() + " x " + getHeight());
         return null;
     }
 
     public String changeDrive() {
         this.drive = (drive == "go") ? "Stop" : "go";
+        System.out.println("Your car is " + getDrive());
         return null;
+    }
+
+    public Carcase(double width, double height, double length, String drive) {
+        setHeight(height);
+        setLength(length);
+        setWidth(width);
+        setDrive(drive);
     }
 }

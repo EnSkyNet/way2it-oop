@@ -2,7 +2,6 @@ package HomeWorks.HomeWork4.Car;
 
 public class Car {
 
-    private String driverName;
     private String company;
 
     private Helm helm;
@@ -25,20 +24,12 @@ public class Car {
         return company;
     }
 
-    public String getDriverName() {
-        return driverName;
-    }
-
     public void setCarcase(Carcase carcase) {
         this.carcase = carcase;
     }
 
     public void setCompany(String company) {
         this.company = company;
-    }
-
-    public void setDriverName(String driverName) {
-        this.driverName = driverName;
     }
 
     public void setHelm(Helm helm) {
@@ -54,9 +45,21 @@ public class Car {
     }
 
     public String toString() {
+        System.out.println("Your company: " + getCompany());
         helm.toString();
         wheel.toString();
         carcase.toString();
         return null;
     }
+
+    public Car(String company,Helm helm, Wheel wheel, Carcase carcase) {
+        setCompany(company);
+        setHelm(helm);
+        setCarcase(carcase);
+        setWheel(wheel);
+    }
+    public void changeCar(){
+        System.out.println("Your car is damaged!");
+    };
+
 }

@@ -22,12 +22,22 @@ public class Wheel {
     }
 
     public String toString() {
-        System.out.println("Beep - Beep - Beep!!!");
+        System.out.println("The diameter of wheel " + getDiameter() + ". The klaxon is touch: " + getKlaxonSignal() + ".");
         return null;
     }
 
     public void changeKlaxonSignal() {
         this.klaxonSignal = (klaxonSignal == true) ? false : true;
+        if (klaxonSignal == true){
+            System.out.println("The klaxon is: Beep - Beep - Beep!!!");
+
+        }else {
+            System.out.println("Touch the klaxon");
+        }
     }
 
+    public Wheel(double diameter, boolean klaxonSignal){
+        setDiameter(diameter);
+        setKlaxonSignal(klaxonSignal);
+    }
 }
