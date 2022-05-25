@@ -1,12 +1,10 @@
 package HomeWorks.HomeWork5.Warrior;
 
-import java.util.Arrays;
-
 public class WarriorTest {
     public static void main(String[] args) {
-        Arbalest arbalest = new Arbalest(15, 15);
-        Spear spear = new Spear(20, 10);
-        Sword sword = new Sword(18, 12);
+        Arbalest arbalest = new Arbalest(10, 8);
+        Spear spear = new Spear(10, 12);
+        Sword sword = new Sword(10, 13);
 //
         Warrior[] warriors = new Warrior[]{arbalest, spear, sword};
         for (int i = 0; i < warriors.length; i++) {
@@ -16,43 +14,54 @@ public class WarriorTest {
         System.out.println("Fight!!!");
         System.out.println();
         fight(warriors);
-
-
     }
 
     public static void fight(Warrior[] warriors) {
         int quantity = warriors.length;
-        int k=1;
+        int k;
+        int attackWarrior;
+        int protectionWarrior;
         while (quantity != 1) {
             for (int i = 0; i < warriors.length; i++) {
-                if (warriors[i] == null) {
-                    break;
-                } else {
-
-                            System.out.println("Warrior " + (i + 1) + " atack warrior " + (i + 2));
-                            warriors[i+2].attack(warriors[i].getDamage());
-                            System.out.println("Warrior " + (j + 1) + " have healht " + warriors[j].getHealth());
-                            if (warriors[j].getHealth() <= 0) {
-                                System.out.println("Warrior " + (j + 1) + " killed!");
-                                warriors[j] = null;
-                                quantity--;
-                            }
-
-                            System.out.println();
-                            break;
-                        }
-                       // break;
+                while (warriors[i] == null) {
+                    i++;
+                    if (i == warriors.length) {
+                        i = 0;
                     }
-                    System.out.println();
                 }
+                attackWarrior = i;
+                k = i + 1;
+                if (i == warriors.length - 1) {
+                    k = 0;
+                }
+                while (warriors[k] == null) {
+                    k++;
+                    if (k == warriors.length) {
+                        k = 0;
+                    }
+                }
+                protectionWarrior = k;
+                System.out.println("Warrior " + (attackWarrior + 1) + " attack warrior " + (protectionWarrior + 1));
+                warriors[protectionWarrior].attack(warriors[attackWarrior].getDamage());
+                System.out.println("Warrior " + (protectionWarrior + 1) + " have health " + warriors[protectionWarrior].getHealth());
+
+                if (warriors[protectionWarrior].getHealth() <= 0) {
+                    System.out.println("Warrior " + (protectionWarrior + 1) + " killed!");
+                    warriors[protectionWarrior] = null;
+                    quantity--;
+                    //}
+                    System.out.println();
+                    break;
+                }
+                System.out.println();
             }
         }
+        System.out.println("---------------------------");
         for (int i = 0; i < warriors.length; i++) {
-            if (warriors[i] == null) {
-                break;
+            if (warriors[i] != null) {
+                System.out.println("Warriors " + (i + 1) + " WIN!!!");
+                System.out.println("---------------------------");
             }
-            System.out.println("Warriors " + (i + 1) + " WIN!!!");
         }
     }
-
 }
