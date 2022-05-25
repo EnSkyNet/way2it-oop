@@ -5,7 +5,7 @@ public class WarriorTest {
         Arbalest arbalest = new Arbalest(10, 8);
         Spear spear = new Spear(10, 12);
         Sword sword = new Sword(10, 13);
-//
+
         Warrior[] warriors = new Warrior[]{arbalest, spear, sword};
         for (int i = 0; i < warriors.length; i++) {
             System.out.println("Warrior " + (i + 1) + " is " + warriors[i].status());
@@ -44,12 +44,10 @@ public class WarriorTest {
                 System.out.println("Warrior " + (attackWarrior + 1) + " attack warrior " + (protectionWarrior + 1));
                 warriors[protectionWarrior].attack(warriors[attackWarrior].getDamage());
                 System.out.println("Warrior " + (protectionWarrior + 1) + " have health " + warriors[protectionWarrior].getHealth());
-
                 if (warriors[protectionWarrior].getHealth() <= 0) {
                     System.out.println("Warrior " + (protectionWarrior + 1) + " killed!");
                     warriors[protectionWarrior] = null;
                     quantity--;
-                    //}
                     System.out.println();
                     break;
                 }
