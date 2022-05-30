@@ -5,7 +5,7 @@ import HomeWorks.HomeWork6.Calc.First.Nurable;
 public class MyCalc implements Nurable {
     int first;
     int second;
-    int rezult;
+    int result;
 
     public int getFirst() {
         return first;
@@ -23,12 +23,12 @@ public class MyCalc implements Nurable {
         this.second = second;
     }
 
-    public int getRezult() {
-        return rezult;
+    public int getResult() {
+        return result;
     }
 
-    public void setRezult(int rezult) {
-        this.rezult = rezult;
+    public void setResult(int result) {
+        this.result = result;
     }
 
     public MyCalc(int first, int second){
@@ -38,25 +38,25 @@ public class MyCalc implements Nurable {
 
     @Override
     public void divide() {
-        setRezult(getFirst() / getSecond());
-        System.out.println(getFirst()+"/"+getSecond()+"="+getRezult());
+        setResult(getFirst() / getSecond());
+        System.out.println(getFirst()+"/"+getSecond()+"="+getResult());
     }
 
     @Override
     public void minus() {
-        setRezult(getFirst() - getSecond());
-        System.out.println(getFirst()+"-"+getSecond()+"="+getRezult());
+        setResult(getFirst() - getSecond());
+        System.out.println(getFirst()+"-"+getSecond()+"="+getResult());
     }
 
     @Override
     public void multiply() {
-        setRezult(getFirst() * getSecond());
-        System.out.println(getFirst()+"*"+getSecond()+"="+getRezult());
+        setResult(getFirst() * getSecond());
+        System.out.println(getFirst()+"*"+getSecond()+"="+getResult());
     }
 
     @Override
     public void plus() {
-        setRezult(getFirst() + getSecond());
-        System.out.println(getFirst()+"+"+getSecond()+"="+getRezult());
+        setResult(getFirst() + getSecond());
+        System.out.println(getFirst()+"+"+getSecond()+"="+getResult());
     }
 }

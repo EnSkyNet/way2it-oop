@@ -16,13 +16,16 @@ public class Helm {
         this.radius = radius;
     }
 
-    public void setSeason(String season) {
-        this.season = season;
+    @Override
+    public String toString() {
+        return "Helm{" +
+                "radius=" + radius +
+                ", season='" + season + '\'' +
+                '}';
     }
 
-    public String toString() {
-        System.out.println("Now season: " + getSeason() + ". Radius of helms: " + getRadius());
-        return null;
+    public void setSeason(String season) {
+        this.season = season;
     }
 
     public void changeRadius() {
@@ -31,7 +34,7 @@ public class Helm {
     }
 
     public Helm(double radius, String season) {
-        setRadius(radius);
-        setSeason(season);
+        this.radius = radius;
+        this.season = season;
     }
 }

@@ -21,8 +21,8 @@ public class WorkerFixed implements Salary {
     }
 
     public WorkerFixed(int price, int days) {
-        setDays(days);
-        setPrice(price);
+        this.days = days;
+        this.price = price;
     }
 
     @Override

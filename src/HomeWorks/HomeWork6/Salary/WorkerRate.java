@@ -21,8 +21,8 @@ public class WorkerRate implements Salary {
     }
 
     public WorkerRate(int price, int hour) {
-        setHour(hour);
-        setPrice(price);
+        this.hour = hour;
+        this.price = price;
     }
 
     @Override

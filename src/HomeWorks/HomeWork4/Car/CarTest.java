@@ -8,7 +8,7 @@ public class CarTest {
                 new Carcase(1800.0, 1800, 5000, "go"));
 
 
-        car.toString();
+        System.out.println(car.toString());
         System.out.println();
         car.changeCar();
         car.getHelm().changeRadius();

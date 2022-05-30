@@ -21,23 +21,26 @@ public class Wheel {
         this.klaxonSignal = klaxon;
     }
 
+    @Override
     public String toString() {
-        System.out.println("The diameter of wheel " + getDiameter() + ". The klaxon is touch: " + getKlaxonSignal() + ".");
-        return null;
+        return "Wheel{" +
+                "diameter=" + diameter +
+                ", klaxonSignal=" + klaxonSignal +
+                '}';
     }
 
     public void changeKlaxonSignal() {
         this.klaxonSignal = (klaxonSignal == true) ? false : true;
-        if (klaxonSignal == true){
+        if (klaxonSignal == true) {
             System.out.println("The klaxon is: Beep - Beep - Beep!!!");
 
-        }else {
+        } else {
             System.out.println("Touch the klaxon");
         }
     }
 
-    public Wheel(double diameter, boolean klaxonSignal){
-        setDiameter(diameter);
-        setKlaxonSignal(klaxonSignal);
+    public Wheel(double diameter, boolean klaxonSignal) {
+        this.diameter = diameter;
+        this.klaxonSignal = klaxonSignal;
     }
 }

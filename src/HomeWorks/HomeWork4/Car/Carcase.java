@@ -38,9 +38,14 @@ public class Carcase {
         this.drive = drive;
     }
 
+    @Override
     public String toString() {
-        System.out.println("Car size: " + getWidth() + " x " + getLength() + " x " + getHeight());
-        return null;
+        return "Carcase{" +
+                "width=" + width +
+                ", height=" + height +
+                ", length=" + length +
+                ", drive='" + drive + '\'' +
+                '}';
     }
 
     public String changeDrive() {
@@ -50,9 +55,9 @@ public class Carcase {
     }
 
     public Carcase(double width, double height, double length, String drive) {
-        setHeight(height);
-        setLength(length);
-        setWidth(width);
-        setDrive(drive);
+        this.height = height;
+        this.length = length;
+        this.width = width;
+        this.drive = drive;
     }
 }

@@ -9,7 +9,4 @@ abstract class Warrior {
     abstract void attack(int damage);
 
     abstract String status();
-
-
-    //abstract void attack();
 }

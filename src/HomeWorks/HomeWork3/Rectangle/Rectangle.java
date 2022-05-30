@@ -1,8 +1,6 @@
 
 package HomeWorks.HomeWork3.Rectangle;
 
-import java.util.Scanner;
-
 public class Rectangle {
     private int length;
     private int width;

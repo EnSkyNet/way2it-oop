@@ -37,12 +37,12 @@ public class Animal {
     }
 
     public void animalSet(String name, int speed, int age) {
-        setName(name);
-        setSpeed(speed);
-        setAge(age);
+        this.name = name;
+        this.speed = speed;
+        this.age = age;
     }
 
-    public void animalGet() {
+    public void printAnimal() {
         System.out.println("Name = " + getName() + ", Speed = " + getSpeed() + "km/h, Age = " + getAge() + "year old.");
     }
 }

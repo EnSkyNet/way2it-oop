@@ -10,5 +10,9 @@ public class RobotTest {
         for(Robot robots : robotArray){
             robots.work();
         }
+
+        Robot.robotCrew[] robot1 = new Robot.robotCrew[]{};
+               robot1[0].makeAllRobotWork();
+
     }
 }

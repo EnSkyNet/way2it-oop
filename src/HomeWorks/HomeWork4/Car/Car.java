@@ -44,22 +44,27 @@ public class Car {
         return wheel;
     }
 
+    @Override
     public String toString() {
-        System.out.println("Your company: " + getCompany());
-        helm.toString();
-        wheel.toString();
-        carcase.toString();
-        return null;
+        return "Car{" +
+                "\n company='" + company + '\'' +
+                ",\n helm=" + helm +
+                ",\n wheel=" + wheel +
+                ",\n carcase=" + carcase +
+                '}';
     }
 
-    public Car(String company,Helm helm, Wheel wheel, Carcase carcase) {
-        setCompany(company);
-        setHelm(helm);
-        setCarcase(carcase);
-        setWheel(wheel);
+    public Car(String company, Helm helm, Wheel wheel, Carcase carcase) {
+        this.company = company;
+        this.helm = helm;
+        this.carcase = carcase;
+        this.wheel = wheel;
     }
-    public void changeCar(){
+
+    public void changeCar() {
         System.out.println("Your car is damaged!");
-    };
+    }
+
+    ;
 
 }
