@@ -1,5 +1,7 @@
 package HomeWorks.HomeWork4.Robot;
 
+import java.util.ArrayList;
+
 public class Robot {
     public void work() {
         System.out.println("I`m Robot, I`m just working!");
@@ -26,23 +28,5 @@ public class Robot {
         }
     }
 
-    public static class robotCrew extends Robot {
-       private Robot[] robotCrew = new Robot[]{};
 
-        public void makeAllRobotWork() {
-            robotCrew[0] = new Robot();
-        }
-
-        public void makeAllCoffeRobotsWork() {
-            robotCrew[1] = new CoffeeRobot();
-        }
-
-        public void makeAllDancerRobotsWork() {
-            robotCrew[2] = new RobotDancer();
-        }
-
-        public void makeAllCookerRobotsWork() {
-            robotCrew[3] = new RobotCooker();
-        }
-    }
 }
