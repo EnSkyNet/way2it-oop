@@ -8,8 +8,7 @@ public class CircleTest {
         Circle circle = new Circle();
         System.out.print("Enter diameter: ");
         circle.setDiameter(scanner.nextDouble());
-        circle.setRadius();
-        circle.Square(circle.getDiameter());
-        circle.Length(circle.getRadius());
+        circle.printSquare(circle.getDiameter());
+        circle.printLength(circle.getRadius());
     }
 }

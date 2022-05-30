@@ -33,11 +33,11 @@ public class Rectangle {
         setWidth(width);
     }
 
-    public void getSquare() {
+    public void printSquare() {
         System.out.println("The square of rectangle = " + getLength() * getWidth());
     }
 
-    public void getPerimetr() {
+    public void printPerimetr() {
         System.out.println("The perimetr of rectangle = " + (getLength() + getWidth()) * 2);
     }
 }

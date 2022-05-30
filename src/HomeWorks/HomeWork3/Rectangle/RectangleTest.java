@@ -7,8 +7,8 @@ public class RectangleTest {
         Scanner scanner = new Scanner(System.in);
         Rectangle rectangle1 = new Rectangle();
         rectangle1.Rectangle();
-        rectangle1.getPerimetr();
-        rectangle1.getSquare();
+        rectangle1.printPerimetr();
+        rectangle1.printSquare();
 
         Rectangle rectangle2 = new Rectangle();
         System.out.print("Enter length: ");
@@ -16,7 +16,7 @@ public class RectangleTest {
         System.out.print("Enter width: ");
         int width = scanner.nextInt();
         rectangle2.Rectangle(length, width);
-        rectangle2.getSquare();
-        rectangle2.getPerimetr();
+        rectangle2.printSquare();
+        rectangle2.printPerimetr();
     }
 }

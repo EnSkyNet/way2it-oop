@@ -14,21 +14,18 @@ public class Circle {
 
     public void setDiameter(double diameter) {
         this.diameter = diameter;
+        setRadius();
     }
 
-    public void setDiameter(int diameter) {
-        this.diameter = (double) diameter;
-    }
-
-    public void setRadius() {
+    private void setRadius() {
         this.radius = diameter / 2;
     }
 
-    public void Square(double diameter) {
+    public void printSquare(double diameter) {
         System.out.println("The square of circle = " + 3.14 * (diameter / 2) * (diameter / 2));
     }
 
-    public void Length(double radius) {
+    public void printLength(double radius) {
         System.out.println("The length of circle = " + 3.14 * radius * 2);
     }
 
