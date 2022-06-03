@@ -1,6 +1,8 @@
 package homeworks.homework18.user;
 
-public class User {
+import java.util.Comparator;
+
+public class User implements Comparable {
     private String name;
     private int age;
 
@@ -27,9 +29,19 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+        return name + " " + age + "\n";
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        User user = (User) o;
+        if (this.age > user.age) {
+            return 1;
+        } else if (this.age < user.age) {
+            return -1;
+        } else {
+            return this.name.compareTo(user.name);
+        }
+
     }
 }
