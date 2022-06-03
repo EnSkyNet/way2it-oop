@@ -1,18 +1,29 @@
 package homeworks.homework18.bank;
 
+import java.util.*;
+
 public class User {
     private String name;
     private int age;
-    private Account account;
+    Set<Account> accountSet = new HashSet<>();
 
-    public Account getAccount() {
-        return account;
+    public void accountSetAdd(Account account) {
+        accountSet.add(account);
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public void getAllAccount() {
+        for (Account a : accountSet) {
+            System.out.println("account id = " + a.getId());
+        }
     }
 
+    public double getSum() {
+        double temp = 0;
+        for (Account a : accountSet) {
+            temp = temp + a.getSum();
+        }
+        return temp;
+    }
 
     public User(String name, int age) {
         this.name = name;

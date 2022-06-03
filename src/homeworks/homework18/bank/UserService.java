@@ -1,9 +1,9 @@
 package homeworks.homework18.bank;
 
 public interface UserService<Account, User> {
-    void printAllAccount(Account account);
+    void printAllAccount();
 
-    void printAllUser(User user);
+    void printAllUser();
 
-    void printTax(Account account);
+    void printTax();
 }

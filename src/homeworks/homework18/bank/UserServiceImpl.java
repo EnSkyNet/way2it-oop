@@ -1,21 +1,39 @@
 package homeworks.homework18.bank;
 
-public class UserServiceImpl implements UserService<Account,User> {
-    //final Account<Integer> account = new Account<>(200, 2000);
+import java.util.*;
+
+public class UserServiceImpl<T> implements UserService<Account<T>, User> {
+
+    HashSet<User> userSet = new HashSet<>();
 
 
-    @Override
-    public void printAllAccount(Account account) {
-        System.out.println("account = " + account.getId());
+    public void userSetAdd(User user) {
+        userSet.add(user);
     }
 
     @Override
-    public void printAllUser(User user) {
-        System.out.println("user = " + user.getName());
+    public void printAllAccount() {
+        for (User u : userSet) {
+            System.out.println("Name = " + u.getName());
+            u.getAllAccount();
+        }
     }
 
     @Override
-    public void printTax(Account account) {
-        System.out.println("tax 5%: " + (account.getSum()*0.05));
+    public void printAllUser() {
+        TreeSet myTreeSet = new TreeSet();
+        myTreeSet.addAll(userSet);
+        System.out.println(myTreeSet);
+        /*for (Object u : temp) {
+            System.out.println("Name = " + u.getName() + ", age: " + u.getAge());
+        }*/
+    }
+
+    @Override
+    public void printTax() {
+        for (User u : userSet) {
+            System.out.print("Name = " + u.getName());
+            System.out.println(" tax 5%: " + (int) (u.getSum() * 0.05));
+        }
     }
 }

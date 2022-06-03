@@ -42,6 +42,5 @@ public class User implements Comparable {
         } else {
             return this.name.compareTo(user.name);
         }
-
     }
 }
