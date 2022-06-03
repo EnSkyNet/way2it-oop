@@ -13,7 +13,7 @@ public class User implements Comparable {
 
     public void getAllAccount() {
         for (Account a : accountSet) {
-            System.out.println("account id = " + a.getId());
+            System.out.println("account id = " + a.getId() + ", sum = " + a.getSum());
         }
     }
 
@@ -45,6 +45,7 @@ public class User implements Comparable {
     public void setAge(int age) {
         this.age = age;
     }
+
     @Override
     public String toString() {
         return name + " " + age + "\n";

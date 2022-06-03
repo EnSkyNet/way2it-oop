@@ -23,9 +23,6 @@ public class UserServiceImpl<T> implements UserService<Account<T>, User> {
     public void printAllUser() {
         TreeSet<User> myTreeSet = new TreeSet<User>(userSet);
         System.out.println(myTreeSet);
-        /*for (Object u : temp) {
-            System.out.println("Name = " + u.getName() + ", age: " + u.getAge());
-        }*/
     }
 
     @Override
