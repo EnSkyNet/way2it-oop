@@ -28,13 +28,15 @@ public class UserTest {
             System.out.println(u.getName() + " " + u.getAge());
         }
 
-
-        TreeSet userTreeSet = new TreeSet();
+        Set<User> userTreeSet = new TreeSet<>();
         userTreeSet.add(userOne);
         userTreeSet.add(userTwo);
         userTreeSet.add(userThree);
         System.out.println();
         System.out.println("TreeSet list:");
-        System.out.println(userTreeSet);
+        for (User u :userTreeSet){
+            System.out.println(u.getName() + " " + u.getAge());
+        }
+
     }
 }
