@@ -2,7 +2,7 @@ package homeworks.homework18.bank;
 
 import java.util.*;
 
-public class User {
+public class User implements Comparable {
     private String name;
     private int age;
     Set<Account> accountSet = new HashSet<>();
@@ -44,5 +44,21 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
+    }
+    @Override
+    public String toString() {
+        return name + " " + age + "\n";
+    }
+
+    @Override
+    public int compareTo(Object o1) {
+        User user = (User) o1;
+        if (this.name.compareTo(user.name) > 0) {
+            return 1;
+        } else if (this.name.compareTo(user.name) < 0) {
+            return -1;
+        } else {
+            return this.name.compareTo(user.name);
+        }
     }
 }
