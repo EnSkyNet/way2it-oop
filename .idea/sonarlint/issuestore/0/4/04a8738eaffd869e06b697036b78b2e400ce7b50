@@ -1,7 +1,0 @@
-
-x
-java:S1488"]Immediately return this expression instead of assigning it to the temporary variable "price".(§û´Žùÿÿÿÿ
-K
-java:S1874"0Remove this use of "setScale"; it is deprecated.(§û´Žùÿÿÿÿ
-R
-java:S1874"7Remove this use of "ROUND_HALF_DOWN"; it is deprecated.(§û´Žùÿÿÿÿ
