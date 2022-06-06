@@ -4,8 +4,7 @@ import java.util.*;
 
 public class UserServiceImpl<T> implements UserService<Account<T>, User> {
 
-    HashSet<User> userSet = new HashSet<>();
-
+    TreeSet<User> userSet = new TreeSet<>();
 
     public void userSetAdd(User user) {
         userSet.add(user);
@@ -21,8 +20,7 @@ public class UserServiceImpl<T> implements UserService<Account<T>, User> {
 
     @Override
     public void printAllUser() {
-        TreeSet<User> myTreeSet = new TreeSet<User>(userSet);
-        System.out.println(myTreeSet);
+        System.out.println(userSet);
     }
 
     @Override

@@ -22,13 +22,13 @@ public class Spearman extends Warrior {
     @Override
     public void attack(int damage) {
         int chance = (int) (Math.random() * 11 + 10);
-        this.health = (getHealth() - (chance * damage));
+        this.health = (this.health - (chance * damage));
     }
 
     @Override
     public String status() {
-        return ("Spearman have health: " + getHealth() +
-                " and damage: " + getDamage());
+        return "Spearman have health: " + this.health +
+                " and damage: " + this.damage;
     }
 
     public Spearman(int damage, int health) {

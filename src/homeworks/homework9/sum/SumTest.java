@@ -18,7 +18,7 @@ public class SumTest {
             numberTwo.setNumber(tempTwo);
             System.out.println(tempOne + " + " + tempTwo + " = " + (tempOne + tempTwo));
         } catch (IncorrectNumberException er) {
-            System.out.println(er);
+            er.printStackTrace();;
         }
     }
 }

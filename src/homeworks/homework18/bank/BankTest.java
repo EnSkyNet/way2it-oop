@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class BankTest {
     public static void main(String[] args) {
         User userOne = new User("Petro", 30);
-        DebitAccount debitAccount = new DebitAccount("100", 1000);
-        CreditAccount creditAccount = new CreditAccount(101, 1001);
+        Account debitAccount = new Account("100", 1000);
+        Account creditAccount = new Account(101, 1001);
         userOne.accountSetAdd(creditAccount);
         userOne.accountSetAdd(debitAccount);
 

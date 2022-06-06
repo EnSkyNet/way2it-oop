@@ -16,28 +16,37 @@ public class Methods {
         }
     }
 
-    public void addition(double one, double two) throws IllegalAccessException {
+    public double addition(double one, double two) throws IllegalAccessException {
 
+        double result = 0;
         if (comparison(one, two)) {
-            System.out.println(one + " + " + two + " = " + (one + two));
+            result = one + two;
         }
+        return result;
     }
 
-    public void multiplication(double one, double two) throws IllegalAccessException {
+    public double multiplication(double one, double two) throws IllegalAccessException {
+        double result = 0;
         if (comparison(one, two)) {
-            System.out.println(one + " * " + two + " = " + (one * two));
+            result = one * two;
         }
+        return result;
     }
 
-    public void division(double one, double two) throws IllegalAccessException {
+    public double division(double one, double two) throws IllegalAccessException {
+        double result = 0;
         if (comparison(one, two)) {
-            System.out.println(one + " / " + two + " = " + (one / two));
+            result = one / two;
         }
+        return result;
     }
 
-    public void subtraction(double one, double two) throws IllegalAccessException {
+    public double subtraction(double one, double two) throws IllegalAccessException {
+        double result = 0;
         if (comparison(one, two)) {
-            System.out.println(one + " - " + two + " = " + (one - two));
+            result = one - two;
         }
+        return result;
     }
+
 }

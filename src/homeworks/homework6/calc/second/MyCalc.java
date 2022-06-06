@@ -3,8 +3,8 @@ package homeworks.homework6.calc.second;
 import homeworks.homework6.calc.first.Nurable;
 
 public class MyCalc implements Nurable {
-    int first;
-    int second;
+     private int first;
+    private int second;
 
     public int getFirst() {
         return first;
@@ -29,21 +29,21 @@ public class MyCalc implements Nurable {
 
     @Override
     public void divide() {
-        System.out.println(getFirst() + "/" + getSecond() + "=" + (getFirst() / getSecond()));
+        System.out.println(this.first + "/" + this.second + "=" + (this.first / this.second));
     }
 
     @Override
     public void minus() {
-        System.out.println(getFirst() + "-" + getSecond() + "=" + (getFirst() - getSecond()));
+        System.out.println(this.first + "-" + this.second + "=" + (this.first - this.second));
     }
 
     @Override
     public void multiply() {
-        System.out.println(getFirst() + "*" + getSecond() + "=" + (getFirst() * getSecond()));
+        System.out.println(this.first + "*" + this.second + "=" + (this.first * this.second));
     }
 
     @Override
     public void plus() {
-        System.out.println(getFirst() + "+" + getSecond() + "=" + (getFirst() + getSecond()));
+        System.out.println(this.first + "+" + this.second + "=" + (this.first + this.second));
     }
 }

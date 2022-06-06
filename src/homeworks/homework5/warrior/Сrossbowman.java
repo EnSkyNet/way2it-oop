@@ -27,8 +27,8 @@ public class Сrossbowman extends Warrior {
 
     @Override
     public String status() {
-        return "Crossbowman have health: " + getHealth() +
-                " and damage: " + getDamage();
+        return "Crossbowman have health: " + this.health +
+                " and damage: " + this.damage;
     }
 
     public Сrossbowman(int damage, int health) {
