@@ -2,7 +2,7 @@ package homeworks.homework18.bank;
 
 import java.util.*;
 
-public class UserServiceImpl<T> implements UserService<Account<T>, User> {
+public class UserServiceImpl<T> implements UserService<Account, User> {
 
     TreeSet<User> userSet = new TreeSet<>();
 
