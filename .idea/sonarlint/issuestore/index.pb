@@ -70,7 +70,3 @@ d
 ,src/homeworks/homework15/zooclub/Person.java,6\2\62c55b54bd554c339e5b199a651b962ec6745fc8
 \
 ,src/homeworks/homework15/zooclub/Animal.java,7\0\7049c0961ddd9660204cffcbacab2a65847d9654
-a
-1src/homeworks/homework15/zooclub/ZooClubTest.java,4\7\47d47c74626c72c2325407e401fc2e987b9bc0e5
-c
-3src/homeworks/homework15/zooclub/PersonService.java,b\2\b27be80da87f2025d19fb27e0e92b0b640c597e4
