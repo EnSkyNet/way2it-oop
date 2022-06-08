@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Person {
     private String name;
-    private  int age;
+    private int age;
 
     public Person(String name, int age) {
         this.name = name;
@@ -26,5 +26,5 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
-    //private List<Animal> listAnimals;
+
 }
