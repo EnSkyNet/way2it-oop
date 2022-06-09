@@ -3,14 +3,13 @@ package homeworks.homework15.zooclub;
 import java.util.*;
 
 public class ClubService {
-    private List<Animal> animalList;
     private Map<Person, List<Animal>> mapPerson;
 
     public void addPerson(Person person) {
         if (mapPerson == null) {
             mapPerson = new HashMap<>();
         }
-        animalList = new ArrayList<>();
+        List<Animal> animalList = new ArrayList<>();
         mapPerson.put(person, animalList);
     }
 
@@ -33,10 +32,7 @@ public class ClubService {
             Scanner scanner = new Scanner(System.in);
             System.out.print("Enter the person: ");
             String key = scanner.next();
-            Person person = findPerson(key);
-            animalList = mapPerson.get(person);
-            animalList.add(animal);
-            mapPerson.put(person, animalList);
+            mapPerson.get(findPerson(key)).add(animal);
         }
     }
 
@@ -56,8 +52,7 @@ public class ClubService {
             System.out.println("ZooClub is empty!");
             System.out.println();
         } else {
-            Person person = findPerson(key);
-            mapPerson.remove(person);
+            mapPerson.remove(findPerson(key));
         }
     }
 
@@ -66,11 +61,7 @@ public class ClubService {
             System.out.println("ZooClub is empty!");
             System.out.println();
         } else {
-            Person person = findPerson(key);
-            animalList = mapPerson.get(person);
-            animalList.removeIf(animal -> animal.getNickname().equals(nickName));
-            animalList.toString();
-            mapPerson.put(person, animalList);
+            mapPerson.get(findPerson(key)).removeIf(animal -> animal.getNickname().equals(nickName));
         }
     }
 
@@ -96,10 +87,9 @@ public class ClubService {
     }
 
     private Person findPerson(String key) {
-        Person person;
         for (Map.Entry<Person, List<Animal>> m : mapPerson.entrySet()) {
             if (m.getKey().getName().equals(key)) {
-                return person = m.getKey();
+                return m.getKey();
             }
         }
         return null;

@@ -13,18 +13,15 @@ public class AccountService{
     }
 
     public void addAccount(String key, Account account) {
-        Person person = findPerson(key);
-        map.put(person, account);
+        map.put(findPerson(key), account);
     }
 
     public void removeAccount(String key) {
-        Person person = findPerson(key);
-        map.put(person, null);
+        map.put(findPerson(key), null);
     }
 
     public void removePerson(String key) {
-        Person person = findPerson(key);
-        map.remove(person);
+        map.remove(findPerson(key));
     }
 
     public void showPerson() {
@@ -38,10 +35,9 @@ public class AccountService{
     }
 
     private Person findPerson(String key) {
-        Person person;
         for (Map.Entry<Person, Account> m : map.entrySet()) {
             if (m.getKey().getName().equals(key)) {
-                return person = m.getKey();
+                return m.getKey();
             }
         }
         return null;

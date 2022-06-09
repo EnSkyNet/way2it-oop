@@ -6,34 +6,26 @@ import java.util.List;
 import java.util.Map;
 
 public class AccountListService {
-    private List<Account> accountList;
     Map<Person, List<Account>> map;
 
     public void addPerson(Person person) {
         if (map == null) {
             map = new HashMap<>();
         }
-        accountList = new ArrayList<>();
+        List<Account> accountList = new ArrayList<>();
         map.put(person, accountList);
     }
 
     public void addAccount(String key, Account account) {
-        Person person = findPerson(key);
-        accountList = map.get(person);
-        accountList.add(account);
-        map.put(person, accountList);
+        map.get(findPerson(key)).add(account);
     }
 
     public void removeAccount(String key, Account account) {
-        Person person = findPerson(key);
-        accountList = map.get(person);
-        accountList.remove(account);
-        map.put(person, accountList);
+        map.get(findPerson(key)).remove(account);
     }
 
     public void removePerson(String key) {
-        Person person = findPerson(key);
-        map.remove(person);
+        map.remove(findPerson(key));
     }
 
     public void showPerson() {
@@ -49,10 +41,9 @@ public class AccountListService {
     }
 
     private Person findPerson(String key) {
-       Person person;
         for (Map.Entry<Person, List<Account>> m : map.entrySet()) {
             if (m.getKey().getName().equals(key)) {
-                return person = m.getKey();
+                return m.getKey();
             }
         }
         return null;
