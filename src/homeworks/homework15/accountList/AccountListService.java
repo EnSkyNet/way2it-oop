@@ -5,33 +5,34 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AccountService {
-    private Person person;
-    private Account account;
+public class AccountListService {
     private List<Account> accountList;
     Map<Person, List<Account>> map;
 
     public void addPerson(Person person) {
         if (map == null) {
             map = new HashMap<>();
-            accountList = new ArrayList<>();
         }
+        accountList = new ArrayList<>();
         map.put(person, accountList);
     }
 
     public void addAccount(String key, Account account) {
-        person = findPerson(key);
+        Person person = findPerson(key);
+        accountList = map.get(person);
         accountList.add(account);
         map.put(person, accountList);
     }
 
-    public void removeAccount(String key) {
-        person = findPerson(key);
-        map.put(person, null);
+    public void removeAccount(String key, Account account) {
+        Person person = findPerson(key);
+        accountList = map.get(person);
+        accountList.remove(account);
+        map.put(person, accountList);
     }
 
     public void removePerson(String key) {
-        person = findPerson(key);
+        Person person = findPerson(key);
         map.remove(person);
     }
 
@@ -39,7 +40,7 @@ public class AccountService {
         for (Map.Entry<Person, List<Account>> m : map.entrySet()) {
             System.out.print("Name: " + m.getKey().getName());
             if (m.getValue() != null) {
-                for(Account a : m.getValue()){
+                for (Account a : m.getValue()) {
                     System.out.print(", account " + a.getAccount());
                 }
             }
@@ -48,6 +49,7 @@ public class AccountService {
     }
 
     private Person findPerson(String key) {
+       Person person;
         for (Map.Entry<Person, List<Account>> m : map.entrySet()) {
             if (m.getKey().getName().equals(key)) {
                 return person = m.getKey();

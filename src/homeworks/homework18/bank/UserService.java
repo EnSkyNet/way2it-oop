@@ -1,8 +1,6 @@
 package homeworks.homework18.bank;
 
-public interface UserService<Account, User> {
-    DebitAccount debitAccount = null;
-    CreditAccount creditAccount = null;
+public interface UserService<T extends Account, User> {
 
     void printAllAccount();
 

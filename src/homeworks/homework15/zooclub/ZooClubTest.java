@@ -4,6 +4,8 @@ import java.util.*;
 
 public class ZooClubTest {
     public static void main(String[] args) {
+        String key;
+        String nickName;
         Scanner scanner = new Scanner(System.in);
         ClubService clubService = new ClubService();
         int choise = 6;
@@ -19,16 +21,24 @@ public class ZooClubTest {
             choise = scanner.nextInt();
             switch (choise) {
                 case 1:
-                    clubService.addPerson();
+                    Person person = clubService.newPerson();
+                    clubService.addPerson(person);
                     break;
                 case 2:
-                    clubService.addAnimal();
+                    Animal animal = clubService.newAnimal();
+                    clubService.addAnimal(animal);
                     break;
                 case 3:
-                    clubService.removeAnimal();
+                    System.out.print("Enter the person: ");
+                    key = scanner.next();
+                    System.out.print("Enter the nickname of animal: ");
+                    nickName = scanner.next();
+                    clubService.removeAnimal(key, nickName);
                     break;
                 case 4:
-                    clubService.removePerson();
+                    System.out.print("Enter the person: ");
+                    key = scanner.next();
+                    clubService.removePerson(key);
                     break;
                 case 5:
                     clubService.showClub();

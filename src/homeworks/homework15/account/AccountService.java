@@ -2,9 +2,7 @@ package homeworks.homework15.account;
 
 import java.util.*;
 
-public class AccountService {
-    private Person person;
-    private Account account;
+public class AccountService{
     Map<Person, Account> map;
 
     public void addPerson(Person person, Account account) {
@@ -15,17 +13,17 @@ public class AccountService {
     }
 
     public void addAccount(String key, Account account) {
-        person = findPerson(key);
+        Person person = findPerson(key);
         map.put(person, account);
     }
 
     public void removeAccount(String key) {
-        person = findPerson(key);
+        Person person = findPerson(key);
         map.put(person, null);
     }
 
     public void removePerson(String key) {
-        person = findPerson(key);
+        Person person = findPerson(key);
         map.remove(person);
     }
 
@@ -40,6 +38,7 @@ public class AccountService {
     }
 
     private Person findPerson(String key) {
+        Person person;
         for (Map.Entry<Person, Account> m : map.entrySet()) {
             if (m.getKey().getName().equals(key)) {
                 return person = m.getKey();

@@ -58,8 +58,6 @@ _
 /src/homeworks/homework18/bank/DebitAccount.java,f\f\ff64fc2a6245fc8d4246bc39591b24221ff58bb0
 b
 2src/homeworks/homework18/bank/UserServiceImpl.java,6\a\6a578ec7b70a023afec835a9fc616871f45dafff
-^
-.src/homeworks/homework18/bank/UserService.java,8\2\82063d492ec1a7acf804e89ebe155101034afca7
 [
 +src/homeworks/homework18/bank/BankTest.java,1\9\19e09b2a6d66ad09943614cd40084dd0fb625ad4
 [
@@ -68,5 +66,3 @@ d
 4src/homeworks/homework3/rectangle/RectangleTest.java,4\2\428cb6516e4d6771f59c4182235c3cad23ee72fd
 \
 ,src/homeworks/homework15/zooclub/Person.java,6\2\62c55b54bd554c339e5b199a651b962ec6745fc8
-\
-,src/homeworks/homework15/zooclub/Animal.java,7\0\7049c0961ddd9660204cffcbacab2a65847d9654
