@@ -5,7 +5,7 @@ import java.util.Date;
 public class Person {
     private String name;
     private int age;
-    private Date timestamp;
+    private String timestamp;
 
     public Person(String name, int age) {
         this.name = name;
@@ -28,11 +28,11 @@ public class Person {
         this.age = age;
     }
 
-    public Date getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Date timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 }
