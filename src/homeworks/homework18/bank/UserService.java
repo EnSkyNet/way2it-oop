@@ -1,6 +1,7 @@
 package homeworks.homework18.bank;
 
-public interface UserService<Account, User> {
+public interface UserService<T extends Account, User> {
+
     void printAllAccount();
 
     void printAllUser();
