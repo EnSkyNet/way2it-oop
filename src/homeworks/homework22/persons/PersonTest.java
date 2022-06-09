@@ -29,4 +29,8 @@ public class PersonTest {
 
 
     }
+
+    interface comparisonAdult{
+            List adultList(List personList);
+    }
 }
