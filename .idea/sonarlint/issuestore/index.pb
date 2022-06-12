@@ -83,3 +83,6 @@ l
 <src/homeworks/homework15/accountList/AccountListService.java,c\c\cc356e6af401fdae661a101c509b29e9baa9bfe7
 a
 1src/homeworks/homework15/zooclub/ClubService.java,f\e\fef8a5093fa54578b6422bd728cb82fe83bc9c36
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

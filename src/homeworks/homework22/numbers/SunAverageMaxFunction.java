@@ -1,5 +1,5 @@
 package homeworks.homework22.numbers;
 
-public interface ICalc {
+public interface SunAverageMaxFunction {
     int action(int one, int two, int three);
 }
