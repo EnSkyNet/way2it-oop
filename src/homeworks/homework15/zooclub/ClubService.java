@@ -72,7 +72,7 @@ public class ClubService {
             System.out.println();
         } else {
             System.out.println("ZooClub consists of: ");
-            for (Map.Entry<Person, List<Animal>> m : mapPerson.entrySet()) {
+            /*for (Map.Entry<Person, List<Animal>> m : mapPerson.entrySet()) {
                 System.out.print(m.getKey().getName() + ": ");
                 if (m.getValue() == null || m.getValue().isEmpty()) {
                     System.out.println(" don`t have animal presently.");
@@ -81,18 +81,32 @@ public class ClubService {
                         System.out.print(s.getTypeAnimal() + " " + s.getNickname() + " ");
                     }
                     System.out.println();
-                }
-            }
+                }*/
+            mapPerson.entrySet()
+                    .stream()
+                    .peek(k -> System.out.print(k.getKey().getName() + ": "))
+                    .peek(v -> v.getValue()
+                            .stream()
+                            .forEach(s -> System.out.print(s.getTypeAnimal() + " " + s.getNickname() + " ")))
+                    .forEach(t -> System.out.println());
+            System.out.println();
+
         }
     }
 
+
     private Person findPerson(String key) {
-        for (Map.Entry<Person, List<Animal>> m : mapPerson.entrySet()) {
+        /*for (Map.Entry<Person, List<Animal>> m : mapPerson.entrySet()) {
             if (m.getKey().getName().equals(key)) {
                 return m.getKey();
             }
         }
-        return null;
-       // return mapPerson.entrySet().stream().filter(p->p.getKey().equals(key)).toArray();
+        return null;*/
+        return mapPerson.entrySet()
+                .stream()
+                .filter(k -> k.getKey().getName().equals(key))
+                .findFirst()
+                .get()
+                .getKey();
     }
 }

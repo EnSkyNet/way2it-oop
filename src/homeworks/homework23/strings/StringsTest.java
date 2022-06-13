@@ -13,7 +13,7 @@ public class StringsTest {
         System.out.println("One meet: " + stringList.stream().filter(s->s.equals("One")).count());
         System.out.println("First element of list: " + stringList.stream().findFirst().orElse("0"));
         System.out.println("Last element of list: " + stringList.stream().reduce((e1, e2)->e2).orElse("empty"));
-        System.out.println("Find Three in list: " + stringList.stream().filter(s -> s.equals("Three")).findAny().orElse("Error"));
+        System.out.println("Find Three in list: " + stringList.stream().filter("Three"::equals).findFirst().get());
         System.out.println("The third element of list: " + stringList.stream().skip(2).findFirst().get());
         System.out.println("The second and third elements of list: " + stringList.stream().skip(1).limit(2).toList());
         System.out.println("List with size of words more then 3: " + stringList.stream().filter(s->s.length()>3).toList());

@@ -54,6 +54,16 @@ _
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+\
+,src/homeworks/homework22/persons/Person.java,2\1\21d522cf9462bf432b7209bd506b97a47d6df019
+a
+1src/homeworks/homework22/numbers/NumbersTest.java,a\8\a860d179373e982514960446c7c100163004d30a
+[
++src/homeworks/homework23/people/People.java,5\c\5c8ded6209e6ee4f6bf2ac9f2840e5b6b5cd49e3
+`
+0src/homeworks/homework22/persons/PersonTest.java,6\6\660846a439aff92bbeddf90e10de111f8c71d206
+k
+;src/homeworks/homework22/numbers/SunAverageMaxFunction.java,a\e\aefda52a2858e0855af9dbbc09646aa585d433df
 _
 /src/homeworks/homework18/bank/DebitAccount.java,f\f\ff64fc2a6245fc8d4246bc39591b24221ff58bb0
 b
@@ -80,5 +90,3 @@ a
 1src/homeworks/homework15/accountList/Account.java,b\d\bd405a1aec548ebe7b581ac03e904c373dc0c690
 l
 <src/homeworks/homework15/accountList/AccountListService.java,c\c\cc356e6af401fdae661a101c509b29e9baa9bfe7
-\
-,src/homeworks/homework22/persons/Person.java,2\1\21d522cf9462bf432b7209bd506b97a47d6df019
