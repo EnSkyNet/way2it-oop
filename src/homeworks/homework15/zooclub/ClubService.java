@@ -1,6 +1,7 @@
 package homeworks.homework15.zooclub;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ClubService {
     private Map<Person, List<Animal>> mapPerson;
@@ -24,7 +25,7 @@ public class ClubService {
         return person;
     }
 
-    public void addAnimal(Animal animal) {
+    public void addAnimal(Animal animal) throws Exception {
         if (mapPerson == null || mapPerson.isEmpty()) {
             System.out.println("ZooClub is empty!");
             System.out.println();
@@ -47,7 +48,7 @@ public class ClubService {
         return animal;
     }
 
-    public void removePerson(String key) {
+    public void removePerson(String key) throws Exception {
         if (mapPerson == null || mapPerson.isEmpty()) {
             System.out.println("ZooClub is empty!");
             System.out.println();
@@ -56,7 +57,7 @@ public class ClubService {
         }
     }
 
-    public void removeAnimal(String key, String nickName) {
+    public void removeAnimal(String key, String nickName) throws Exception {
         if (mapPerson == null || mapPerson.isEmpty()) {
             System.out.println("ZooClub is empty!");
             System.out.println();
@@ -90,12 +91,11 @@ public class ClubService {
                             .forEach(s -> System.out.print(s.getTypeAnimal() + " " + s.getNickname() + " ")))
                     .forEach(t -> System.out.println());
             System.out.println();
-
         }
     }
 
 
-    private Person findPerson(String key) {
+    private Person findPerson(String key) throws Exception {
         /*for (Map.Entry<Person, List<Animal>> m : mapPerson.entrySet()) {
             if (m.getKey().getName().equals(key)) {
                 return m.getKey();
@@ -106,7 +106,8 @@ public class ClubService {
                 .stream()
                 .filter(k -> k.getKey().getName().equals(key))
                 .findFirst()
-                .get()
+                //.ifPresent(mapPerson.get)
+                .orElseThrow(() -> new IncorectPersonException("Person " + key + " not found - "))
                 .getKey();
     }
 }
