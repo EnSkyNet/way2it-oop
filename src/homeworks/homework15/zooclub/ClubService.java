@@ -1,5 +1,6 @@
 package homeworks.homework15.zooclub;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -95,7 +96,7 @@ public class ClubService {
     }
 
 
-    private Person findPerson(String key) throws Exception {
+    private Person findPerson(String name) throws Exception {
         /*for (Map.Entry<Person, List<Animal>> m : mapPerson.entrySet()) {
             if (m.getKey().getName().equals(key)) {
                 return m.getKey();
@@ -104,10 +105,9 @@ public class ClubService {
         return null;*/
         return mapPerson.entrySet()
                 .stream()
-                .filter(k -> k.getKey().getName().equals(key))
+                .filter(k -> k.getKey().getName().equals(name))
                 .findFirst()
-                //.ifPresent(mapPerson.get)
-                .orElseThrow(() -> new IncorectPersonException("Person " + key + " not found - "))
+                .orElseThrow(() -> new IncorectPersonException("Person " + name + " not found"))
                 .getKey();
     }
 }

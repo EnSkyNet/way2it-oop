@@ -76,3 +76,17 @@ a
 0src/homeworks/homework22/persons/PersonTest.java,6\6\660846a439aff92bbeddf90e10de111f8c71d206
 [
 +src/homeworks/homework23/people/People.java,5\c\5c8ded6209e6ee4f6bf2ac9f2840e5b6b5cd49e3
+_
+/src/homeworks/homework23/people/PeopleTest.java,e\c\ec998e96dae17ad0e9863967357e9f711d0f5792
+W
+'src/homeworks/homework18/user/User.java,1\b\1b196135454b0f1c0f419c6d47eed61ab6001869
+[
++src/homeworks/homework18/user/UserTest.java,9\a\9ac49e97c64213f52e6a54a708c9bc3c34afc958
+a
+1src/homeworks/homework23/strings/StringsTest.java,c\2\c24b6785669aa93eae8db6aedb175b1e4ba2302d
+l
+<src/homeworks/homework9/questionnaire/UnderAgeException.java,e\a\eab2de829cc61cf74537d07cf0ee18d4efc8610c
+m
+=src/homeworks/homework15/zooclub/IncorectPersonException.java,3\7\378b0a6ff84f151784c5759b130a2655f0a689c1
+a
+1src/homeworks/homework15/zooclub/ZooClubTest.java,4\7\47d47c74626c72c2325407e401fc2e987b9bc0e5
