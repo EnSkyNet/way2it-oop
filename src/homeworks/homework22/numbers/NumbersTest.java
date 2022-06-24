@@ -1,12 +1,10 @@
 package homeworks.homework22.numbers;
 
-import java.util.Arrays;
-
 public class NumbersTest {
     public static void main(String[] args) {
-        ICalc averageFunction = (one, two, three) -> (one + two + three) / 3;
-        ICalc sumFunction = (one, two, three) -> one + two + three;
-        ICalc findMaxNumberFunction = (one, two, three) -> {
+        SunAverageMaxFunction averageFunction = (one, two, three) -> (one + two + three) / 3;
+        SunAverageMaxFunction sumFunction = (one, two, three) -> one + two + three;
+        SunAverageMaxFunction findMaxNumberFunction = (one, two, three) -> {
             int max = one;
             if (max < two) max = two;
             if (max < three) max = three;

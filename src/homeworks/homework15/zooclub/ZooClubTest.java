@@ -3,7 +3,7 @@ package homeworks.homework15.zooclub;
 import java.util.*;
 
 public class ZooClubTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         String key;
         String nickName;
         Scanner scanner = new Scanner(System.in);

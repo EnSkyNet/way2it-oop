@@ -17,24 +17,22 @@ public class PersonTest {
         personList.add(person3);
         personList.add(person4);
         System.out.println("List of persons: ");
+
         personList.forEach(person -> System.out.println("Name: " + person.getName() + ", age: " + person.getAge()));
         System.out.println();
 
-        List<Person> adultPerson = new ArrayList<>();
-        adultPerson.addAll(personList.stream().filter(person -> person.getAge() >= 18).toList());
         System.out.println("List of adult persons: ");
-        adultPerson.forEach(person -> System.out.println("Name: " + person.getName() + ", age: " + person.getAge()));
+        personList.stream().filter(person -> person.getAge() >= 18)
+                .forEach(person -> System.out.println("Name: " + person.getName() + ", age: " + person.getAge()));
         System.out.println();
 
-        List nameLength = new ArrayList<>();
-        nameLength.addAll(personList.stream().map(person -> person.getName().toString().length()).toList());
         System.out.println("List of length name: ");
-        nameLength.forEach(a -> System.out.println(a));
+        personList.stream().map(person -> person.getName().toString().length()).toList()
+                .forEach(a -> System.out.println(a));
         System.out.println();
 
-        List<Person> setTime = new ArrayList<>();
-        setTime.addAll(personList.stream().peek(person -> person.setTimestamp(date.toString())).toList());
         System.out.println("List of person wiht date: ");
-        setTime.forEach(person -> System.out.println("Name: " + person.getName() + ", time: " + person.getTimestamp()));
+        personList.stream().peek(person -> person.setTimestamp(date.toString())).toList()
+                .forEach(person -> System.out.println("Name: " + person.getName() + ", time: " + person.getTimestamp()));
     }
 }

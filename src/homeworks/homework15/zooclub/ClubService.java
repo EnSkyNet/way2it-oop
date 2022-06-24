@@ -1,6 +1,8 @@
 package homeworks.homework15.zooclub;
 
+import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ClubService {
     private Map<Person, List<Animal>> mapPerson;
@@ -24,7 +26,7 @@ public class ClubService {
         return person;
     }
 
-    public void addAnimal(Animal animal) {
+    public void addAnimal(Animal animal) throws Exception {
         if (mapPerson == null || mapPerson.isEmpty()) {
             System.out.println("ZooClub is empty!");
             System.out.println();
@@ -47,7 +49,7 @@ public class ClubService {
         return animal;
     }
 
-    public void removePerson(String key) {
+    public void removePerson(String key) throws Exception {
         if (mapPerson == null || mapPerson.isEmpty()) {
             System.out.println("ZooClub is empty!");
             System.out.println();
@@ -56,7 +58,7 @@ public class ClubService {
         }
     }
 
-    public void removeAnimal(String key, String nickName) {
+    public void removeAnimal(String key, String nickName) throws Exception {
         if (mapPerson == null || mapPerson.isEmpty()) {
             System.out.println("ZooClub is empty!");
             System.out.println();
@@ -72,7 +74,7 @@ public class ClubService {
             System.out.println();
         } else {
             System.out.println("ZooClub consists of: ");
-            for (Map.Entry<Person, List<Animal>> m : mapPerson.entrySet()) {
+            /*for (Map.Entry<Person, List<Animal>> m : mapPerson.entrySet()) {
                 System.out.print(m.getKey().getName() + ": ");
                 if (m.getValue() == null || m.getValue().isEmpty()) {
                     System.out.println(" don`t have animal presently.");
@@ -81,17 +83,30 @@ public class ClubService {
                         System.out.print(s.getTypeAnimal() + " " + s.getNickname() + " ");
                     }
                     System.out.println();
-                }
-            }
+                }*/
+            mapPerson.entrySet()
+                    .stream()
+                    .forEach(k -> {
+                        System.out.print(k.getKey().getName() + ": ");
+                        k.getValue().forEach(v -> System.out.print(v.getTypeAnimal() + " " + v.getNickname()));
+                        System.out.println();
+                    });
+            System.out.println();
         }
     }
 
-    private Person findPerson(String key) {
-        for (Map.Entry<Person, List<Animal>> m : mapPerson.entrySet()) {
+    private Person findPerson(String name) throws Exception {
+        /*for (Map.Entry<Person, List<Animal>> m : mapPerson.entrySet()) {
             if (m.getKey().getName().equals(key)) {
                 return m.getKey();
             }
         }
-        return null;
+        return null;*/
+        return mapPerson.entrySet()
+                .stream()
+                .filter(k -> k.getKey().getName().equals(name))
+                .findFirst()
+                .orElseThrow(() -> new IncorectPersonException("Person " + name + " not found"))
+                .getKey();
     }
 }
