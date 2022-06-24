@@ -86,15 +86,14 @@ public class ClubService {
                 }*/
             mapPerson.entrySet()
                     .stream()
-                    .peek(k -> System.out.print(k.getKey().getName() + ": "))
-                    .peek(v -> v.getValue()
-                            .stream()
-                            .forEach(s -> System.out.print(s.getTypeAnimal() + " " + s.getNickname() + " ")))
-                    .forEach(t -> System.out.println());
+                    .forEach(k -> {
+                        System.out.print(k.getKey().getName() + ": ");
+                        k.getValue().forEach(v -> System.out.print(v.getTypeAnimal() + " " + v.getNickname()));
+                        System.out.println();
+                    });
             System.out.println();
         }
     }
-
 
     private Person findPerson(String name) throws Exception {
         /*for (Map.Entry<Person, List<Animal>> m : mapPerson.entrySet()) {
