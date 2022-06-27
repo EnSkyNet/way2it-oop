@@ -82,3 +82,7 @@ l
 <src/homeworks/homework9/questionnaire/UnderAgeException.java,e\a\eab2de829cc61cf74537d07cf0ee18d4efc8610c
 m
 =src/homeworks/homework15/zooclub/IncorectPersonException.java,3\7\378b0a6ff84f151784c5759b130a2655f0a689c1
+a
+1src/homeworks/homework15/zooclub/ZooClubTest.java,4\7\47d47c74626c72c2325407e401fc2e987b9bc0e5
+a
+1src/homeworks/homework23/strings/StringsTest.java,c\2\c24b6785669aa93eae8db6aedb175b1e4ba2302d
