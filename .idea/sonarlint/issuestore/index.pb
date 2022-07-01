@@ -39,9 +39,6 @@ W
 0src/homeworks/homework18/bank/CreditAccount.java,8\9\89d435bb9bc856e01479aaef532dd3b3a5dd156f
 _
 /src/homeworks/homework6/calc/second/MyCalc.java,9\5\95c5c8778c7b5532073087abb308e4c1f9a70224
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 _
 /src/homeworks/homework18/bank/DebitAccount.java,f\f\ff64fc2a6245fc8d4246bc39591b24221ff58bb0
 b

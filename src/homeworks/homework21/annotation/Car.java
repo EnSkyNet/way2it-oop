@@ -61,7 +61,7 @@ public class Car {
     public String toString() {
         return "Car [carBrand = " + getCarBrand() + ", manufactured: " + getYearOfManufacture()
                 + ", engine capacity: " + getEngineCapacity()
-        + ", color is " + getColor()
-        + ", type - " + getType() + "]";
+                + ", color is " + getColor()
+                + ", type - " + getType() + "]";
     }
 }

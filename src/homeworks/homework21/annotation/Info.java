@@ -11,7 +11,7 @@ import java.lang.annotation.RetentionPolicy;
 
 public @interface Info {
     String creator() default "Kulibin CB";
-    //
+
     String color() default "red";
 
     int yearOfManufacture();

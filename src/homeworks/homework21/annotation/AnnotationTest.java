@@ -3,7 +3,6 @@ package homeworks.homework21.annotation;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
-import java.lang.module.Configuration;
 import java.lang.reflect.Field;
 
 public class AnnotationTest {
@@ -19,9 +18,8 @@ public class AnnotationTest {
     public static void getAnnotationFields(Class<?> customClass, File file) throws FileNotFoundException {
         Field[] fields = customClass.getDeclaredFields();
         PrintStream ps = new PrintStream(file);
-        for (int i = 0; i < fields.length; i++) {
-            Field field = fields[i];
-            if (field.getAnnotation(Info.class) instanceof Info) {
+        for (Field field : fields) {
+            if (field.getAnnotation(Info.class) != null) {
                 ps.println("field of class with annotation -> [" + field + "] has name -> [" + field.getName() + "]");
                 System.out.println("field of class with annotation- > [" + field + "] has name -> [" + field.getName() + "]");
             }
