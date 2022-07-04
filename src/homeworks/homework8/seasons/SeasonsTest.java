@@ -5,6 +5,10 @@ import java.util.Scanner;
 public class SeasonsTest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
+        String month;
+        String season;
+        int number;
         SeasonService service = new SeasonService();
         String chose = "11";
         while (!chose.equals("0")) {
@@ -25,25 +29,39 @@ public class SeasonsTest {
             chose = scan.next();
             switch (chose) {
                 case "1":
-                    service.monthsAvailable();
+                    System.out.print("Enter month: ");
+                    month = s.nextLine().toUpperCase();
+                    service.monthsAvailable(month);
                     break;
                 case "2":
-                    service.monthsInSeason();
+                    System.out.print("Enter season: ");
+                    season = s.nextLine().toUpperCase();
+                    service.monthsInSeason(season);
                     break;
                 case "3":
-                    service.thatNumber();
+                    System.out.print("Enter number of days: ");
+                    number = s.nextInt();
+                    service.thatNumber(number);
                     break;
                 case "4":
-                    service.smallerNumber();
+                    System.out.print("Enter number of days: ");
+                    number = s.nextInt();
+                    service.smallerNumber(number);
                     break;
                 case "5":
-                    service.biggerNumber();
+                    System.out.print("Enter number of days: ");
+                    number = s.nextInt();
+                    service.biggerNumber(number);
                     break;
                 case "6":
-                    service.nextSeason();
+                    System.out.print("Enter season: ");
+                    season = s.nextLine().toUpperCase();
+                    service.nextSeason(season);
                     break;
                 case "7":
-                    service.previousSeason();
+                    System.out.print("Enter season: ");
+                    season = s.nextLine().toUpperCase();
+                    service.previousSeason(season);
                     break;
                 case "8":
                     service.evenNumberOfDays();
@@ -52,7 +70,9 @@ public class SeasonsTest {
                     service.oddNumberOfDays();
                     break;
                 case "10":
-                    service.isEvenNumberOfDays();
+                    System.out.print("Enter month: ");
+                    month = s.nextLine().toUpperCase();
+                    service.isEvenNumberOfDays(month);
                     break;
                 default:
                     break;
