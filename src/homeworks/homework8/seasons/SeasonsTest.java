@@ -6,8 +6,8 @@ public class SeasonsTest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         SeasonService service = new SeasonService();
-        int chose = 11;
-        while (chose > 0) {
+        String chose = "11";
+        while (!chose.equals("0")) {
             System.out.println();
             System.out.println("1 - Is the month available?");
             System.out.println("2 - All months in entered season");
@@ -22,36 +22,36 @@ public class SeasonsTest {
             System.out.println("0 - EXIT");
             System.out.println();
             System.out.print("Enter chose: ");
-            chose = scan.nextInt();
+            chose = scan.next();
             switch (chose) {
-                case 1:
+                case "1":
                     service.monthsAvailable();
                     break;
-                case 2:
+                case "2":
                     service.monthsInSeason();
                     break;
-                case 3:
+                case "3":
                     service.thatNumber();
                     break;
-                case 4:
+                case "4":
                     service.smallerNumber();
                     break;
-                case 5:
+                case "5":
                     service.biggerNumber();
                     break;
-                case 6:
+                case "6":
                     service.nextSeason();
                     break;
-                case 7:
+                case "7":
                     service.previousSeason();
                     break;
-                case 8:
+                case "8":
                     service.evenNumberOfDays();
                     break;
-                case 9:
+                case "9":
                     service.oddNumberOfDays();
                     break;
-                case 10:
+                case "10":
                     service.isEvenNumberOfDays();
                     break;
                 default:

@@ -1,22 +1,24 @@
 package homeworks.homework8.seasons;
 
-import java.time.Month;
 import java.util.Scanner;
 
 public class SeasonService {
-    Months months;
     Scanner s = new Scanner(System.in);
 
     public void monthsAvailable() {
         String month;
+        int k = 0;
         System.out.print("Enter month: ");
         month = s.nextLine().toUpperCase();
-        for (Months months : Months.values()) {
-            if (month.equals(month)) {
+        for (Months m : Months.values()) {
+            if (m.name().equals(month)) {
                 System.out.println("This month is present!");
+                k++;
                 break;
             }
-            System.out.println("This month is absent!");
+        }
+        if (k == 0) {
+            System.out.println("This is no month!");
         }
     }
 
@@ -87,41 +89,57 @@ public class SeasonService {
 
     public void nextSeason() {
         String season;
+        int temp = -1;
         int k = 0;
         System.out.print("Enter season: ");
         season = s.nextLine().toUpperCase();
-        System.out.println("Your season: " + season + ". The next season: ");
+        System.out.print("Your season: " + season + ". The next season: ");
         for (Months months : Months.values()) {
             if (months.seasons.name().equals(season)) {
-                System.out.println(months);
+                temp = months.seasons.ordinal();
                 k++;
                 break;
             }
         }
         if (k == 0) {
             System.out.println("No that season!");
+        } else {
+            if (temp == 3) {
+                System.out.println(Seasons.values()[0].name());
+            } else {
+                System.out.println(Seasons.values()[temp + 1].name());
+            }
+
         }
     }
+
     public void previousSeason() {
         String season;
+        int temp = -1;
         int k = 0;
         System.out.print("Enter season: ");
         season = s.nextLine().toUpperCase();
-        System.out.println("Your season: " + season + ". The previous season: ");
+        System.out.print("Your season: " + season + ". The previous season: ");
         for (Months months : Months.values()) {
             if (months.seasons.name().equals(season)) {
-                System.out.println(months);
+                temp = months.seasons.ordinal();
                 k++;
                 break;
             }
         }
         if (k == 0) {
             System.out.println("No that season!");
+        } else {
+            if (temp == 0) {
+                System.out.println(Seasons.values()[3].name());
+            } else {
+                System.out.println(Seasons.values()[temp - 1].name());
+            }
+
         }
     }
 
     public void evenNumberOfDays() {
-        String season;
         System.out.println("There are months with an even number of days: ");
         for (Months months : Months.values()) {
             if (months.days % 2 == 0) {
@@ -131,7 +149,6 @@ public class SeasonService {
     }
 
     public void oddNumberOfDays() {
-        String season;
         System.out.println("There are months with an odd number of days: ");
         for (Months months : Months.values()) {
             if (months.days % 2 != 0) {
