@@ -10,6 +10,7 @@ public class ZooClubTest {
         ClubService clubService = new ClubService();
         int choise = 6;
         while (choise > 0) {
+            System.out.println();
             System.out.println("Menu by zooClub:");
             System.out.println(" 1. Add new person to zooClub.");
             System.out.println(" 2. Add new animal to person.");
