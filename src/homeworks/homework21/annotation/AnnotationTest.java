@@ -20,8 +20,10 @@ public class AnnotationTest {
         Field[] fields = customClass.getDeclaredFields();
         try (PrintStream ps = new PrintStream(file);) {
             for (Field field : fields) {
-                ps.println("field of class with annotation -> [" + field + "] has name -> [" + field.getName() + "]");
-                System.out.println("field of class with annotation- > [" + field + "] has name -> [" + field.getName() + "]");
+                if (field.getAnnotation(Info.class) != null) {
+                    ps.println("field of class with annotation -> [" + field + "] has name -> [" + field.getName() + "]");
+                    System.out.println("field of class with annotation- > [" + field + "] has name -> [" + field.getName() + "]");
+                }
             }
         }
     }
