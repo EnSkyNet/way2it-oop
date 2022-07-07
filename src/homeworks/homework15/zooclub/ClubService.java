@@ -32,6 +32,8 @@ public class ClubService {
             String key = scanner.next();
             if (findPerson(key) != null) {
                 mapPerson.get(findPerson(key)).add(animal);
+            } else {
+                System.out.println(key + " is absent at ZooClub!");
             }
         }
     }
@@ -51,6 +53,8 @@ public class ClubService {
             System.out.println("ZooClub is empty!");
         } else if (findPerson(key) != null) {
             mapPerson.remove(findPerson(key));
+        } else {
+            System.out.println(key + " is absent at ZooClub!");
         }
     }
 
@@ -59,6 +63,8 @@ public class ClubService {
             System.out.println("ZooClub is empty!");
         } else if (findPerson(key) != null) {
             mapPerson.get(findPerson(key)).removeIf(animal -> animal.getNickname().equals(nickName));
+        }else {
+            System.out.println(key + " is absent at ZooClub!");
         }
     }
 
@@ -94,16 +100,9 @@ public class ClubService {
             }
         }
         return null;*/
-        if (mapPerson.entrySet().stream().anyMatch(k -> k.getKey().getName().equals(name))) {
-            return mapPerson.entrySet()
-                    .stream()
-                    .filter(k -> k.getKey().getName().equals(name))
-                    .findFirst()
-                    .get()
-                    .getKey();
-        } else {
-            System.out.println(name + " is absent at ZooClub!");
-            return null;
-        }
+        return mapPerson.entrySet()
+                .stream()
+                .filter(k -> k.getKey().getName().equals(name))
+                .findFirst().map(Map.Entry::getKey).orElse(null);
     }
 }

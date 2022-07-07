@@ -23,8 +23,7 @@ public class SeasonsTest {
             System.out.println("8 - All month with an even number of days");
             System.out.println("9 - All month with an odd number of days");
             System.out.println("10 - Have this month an even number of days?");
-            System.out.println("0 - EXIT");
-            System.out.println();
+            System.out.println("0 - EXIT");            System.out.println();
             System.out.print("Enter chose: ");
             chose = scan.next();
             switch (chose) {

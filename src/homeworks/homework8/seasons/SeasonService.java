@@ -1,7 +1,10 @@
 package homeworks.homework8.seasons;
 
+import java.awt.*;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class SeasonService {
     Scanner s = new Scanner(System.in);
@@ -76,10 +79,20 @@ public class SeasonService {
         if (k == 0) {
             System.out.println("No months with smaller number of days!");
         }*/
-        if (Arrays.stream(Months.values()).anyMatch(days -> days.getDays() < number)) {
+        /*if (Arrays.stream(Months.values()).anyMatch(days -> days.getDays() < number)) {
             Arrays.stream(Months.values()).filter(days -> days.getDays() < number).forEach(months -> System.out.print(months.name() + " "));
             System.out.println();
         } else {
+            System.out.println("No months with smaller number of days!");
+        }*/
+        if (Arrays.stream(Months.values()).filter(months -> {
+            if (months.getDays() < number) {
+                System.out.print(months.name() + " ");
+                return true;
+            } else {
+                return false;
+            }
+        }).count() == 0) {
             System.out.println("No months with smaller number of days!");
         }
     }
@@ -95,10 +108,15 @@ public class SeasonService {
         if (k == 0) {
             System.out.println("No months with bigger number of days!");
         }*/
-        if (Arrays.stream(Months.values()).anyMatch(days -> days.getDays() > number)) {
-            Arrays.stream(Months.values()).filter(days -> days.getDays() > number).forEach(months -> System.out.print(months.name() + " "));
-            System.out.println();
-        } else {
+        if (Arrays.stream(Months.values()).filter(months -> {
+            if (months.getDays() > number) {
+                System.out.print(months.name() + " ");
+                return true;
+            } else {
+                return false;
+            }
+        }).
+                count() == 0) {
             System.out.println("No months with bigger number of days!");
         }
     }
@@ -126,8 +144,7 @@ public class SeasonService {
         }*/
         if (Arrays.stream(Seasons.values()).anyMatch(seasons -> seasons.name().equals(season))) {
             System.out.print("Your season: " + season + ". The next season: ");
-            Arrays.stream(Seasons.values()).filter(seasons -> seasons.name().equals(season)).forEach(seasons ->
-            {
+            Arrays.stream(Seasons.values()).filter(seasons -> seasons.name().equals(season)).forEach(seasons -> {
                 if (seasons.ordinal() == 3) {
                     System.out.println(Seasons.values()[0].name());
                 } else {
@@ -165,8 +182,7 @@ public class SeasonService {
         }*/
         if (Arrays.stream(Seasons.values()).anyMatch(seasons -> seasons.name().equals(season))) {
             System.out.print("Your season: " + season + ". The previous season: ");
-            Arrays.stream(Seasons.values()).filter(seasons -> seasons.name().equals(season)).forEach(seasons ->
-            {
+            Arrays.stream(Seasons.values()).filter(seasons -> seasons.name().equals(season)).forEach(seasons -> {
                 if (seasons.ordinal() == 0) {
                     System.out.println(Seasons.values()[3].name());
                 } else {
