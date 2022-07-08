@@ -21,8 +21,14 @@ public class SeasonService {
         if (k == 0) {
             System.out.println("This is no month!");
         }*/
-        if (Arrays.stream(Months.values()).anyMatch(months -> months.name().equals(month))) {
-            Arrays.stream(Months.values()).filter(months -> months.name().equals(month)).forEach(months -> System.out.println("The " + months.name() + " is available!"));
+        if (Arrays.stream(Months.values()).anyMatch(months -> {
+            if (months.name().equals(month)) {
+                System.out.println("The " + months.name() + " is available!");
+                return true;
+            } else {
+                return false;
+            }
+        })) {
         } else {
             System.out.println("This is no month!");
         }
@@ -40,12 +46,17 @@ public class SeasonService {
         if (k == 0) {
             System.out.println("No that season!");
         }*/
-        if (Arrays.stream(Seasons.values()).anyMatch(seasons -> seasons.name().equals(season))) {
-            System.out.println("Your season: " + season + ". There are months: ");
-            Arrays.stream(Months.values()).filter(months -> months.getSeason().name().equals(season)).forEach(months -> System.out.print(months.name() + " "));
-            System.out.println();
-        } else {
-            System.out.println("This is no season!");
+        if (Arrays.stream(Months.values()).filter(months -> {
+            if (months.getSeason().name().equals(season)) {
+                if (months.getSeason().name().equals(season)) {
+                    System.out.println("Your season: " + season + ". There are months: " + months.name());
+                }
+                return true;
+            } else {
+                return false;
+            }
+        }).count() == 0) {
+            System.out.print("This is no season!");
         }
     }
 
@@ -60,12 +71,17 @@ public class SeasonService {
         if (k == 0) {
             System.out.println("No months with that number of days!");
         }*/
-        if (Arrays.stream(Months.values()).anyMatch(days -> days.getDays() == number)) {
-            Arrays.stream(Months.values()).filter(days -> days.getDays() == number).forEach(months -> System.out.print(months.name() + " "));
-            System.out.println();
-        } else {
-            System.out.println("No months with that number of days!");
+        if (Arrays.stream(Months.values()).filter(months -> {
+            if (months.getDays() == number) {
+                System.out.print(months.name() + " ");
+                return true;
+            } else {
+                return false;
+            }
+        }).count() == 0) {
+            System.out.print("No months with that number of days!");
         }
+        System.out.println();
     }
 
     public void smallerNumber(int number) {
@@ -93,8 +109,9 @@ public class SeasonService {
                 return false;
             }
         }).count() == 0) {
-            System.out.println("No months with smaller number of days!");
+            System.out.print("No months with smaller number of days!");
         }
+        System.out.println();
     }
 
     public void biggerNumber(int number) {
@@ -115,10 +132,10 @@ public class SeasonService {
             } else {
                 return false;
             }
-        }).
-                count() == 0) {
-            System.out.println("No months with bigger number of days!");
+        }).count() == 0) {
+            System.out.print("No months with bigger number of days!");
         }
+        System.out.println();
     }
 
     public void nextSeason(String season) {
@@ -142,17 +159,19 @@ public class SeasonService {
             }
 
         }*/
-        if (Arrays.stream(Seasons.values()).anyMatch(seasons -> seasons.name().equals(season))) {
-            System.out.print("Your season: " + season + ". The next season: ");
-            Arrays.stream(Seasons.values()).filter(seasons -> seasons.name().equals(season)).forEach(seasons -> {
+        if (Arrays.stream(Seasons.values()).filter(seasons -> {
+            if (seasons.name().equals(season)) {
+                System.out.print("Your season: " + season + ". The next season: ");
                 if (seasons.ordinal() == 3) {
                     System.out.println(Seasons.values()[0].name());
                 } else {
                     System.out.println(Seasons.values()[seasons.ordinal() + 1].name());
                 }
-            });
-            System.out.println();
-        } else {
+                return true;
+            } else {
+                return false;
+            }
+        }).count() == 0) {
             System.out.println("This is no season!");
         }
     }
@@ -180,17 +199,19 @@ public class SeasonService {
             }
 
         }*/
-        if (Arrays.stream(Seasons.values()).anyMatch(seasons -> seasons.name().equals(season))) {
-            System.out.print("Your season: " + season + ". The previous season: ");
-            Arrays.stream(Seasons.values()).filter(seasons -> seasons.name().equals(season)).forEach(seasons -> {
+        if (Arrays.stream(Seasons.values()).filter(seasons -> {
+            if (seasons.name().equals(season)) {
+                System.out.print("Your season: " + season + ". The previous season: ");
                 if (seasons.ordinal() == 0) {
                     System.out.println(Seasons.values()[3].name());
                 } else {
                     System.out.println(Seasons.values()[seasons.ordinal() - 1].name());
                 }
-            });
-            System.out.println();
-        } else {
+                return true;
+            } else {
+                return false;
+            }
+        }).count() == 0) {
             System.out.println("This is no season!");
         }
     }
@@ -232,15 +253,18 @@ public class SeasonService {
         if (k == 0) {
             System.out.println("No that month!");
         }*/
-        if (Arrays.stream(Months.values()).anyMatch(months -> months.name().equals(month))) {
-            Arrays.stream(Months.values()).filter(months -> months.name().equals(month)).forEach(months -> {
+        if (Arrays.stream(Months.values()).filter(months -> {
+            if (months.name().equals(month)) {
                 if (months.getDays() % 2 == 0) {
                     System.out.println("The " + months.name() + " have an even number of days");
                 } else {
                     System.out.println("The " + months.name() + " have an odd number of days");
                 }
-            });
-        } else {
+                return true;
+            } else {
+                return false;
+            }
+        }).count() == 0) {
             System.out.println("This is no month!");
         }
     }
