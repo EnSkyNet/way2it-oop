@@ -1,0 +1,4 @@
+field of class with annotation -> [private java.lang.String homeworks.homework21.annotation.Car.carBrand] has name -> [carBrand]
+field of class with annotation -> [private int homeworks.homework21.annotation.Car.yearOfManufacture] has name -> [yearOfManufacture]
+field of class with annotation -> [private java.lang.String homeworks.homework21.annotation.Car.color] has name -> [color]
+field of class with annotation -> [private java.lang.String homeworks.homework21.annotation.Car.type] has name -> [type]

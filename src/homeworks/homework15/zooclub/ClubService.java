@@ -1,8 +1,6 @@
 package homeworks.homework15.zooclub;
 
-import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class ClubService {
     private Map<Person, List<Animal>> mapPerson;
@@ -22,19 +20,21 @@ public class ClubService {
         String name = scanner.next();
         System.out.print("Enter age: ");
         int age = scanner.nextInt();
-        Person person = new Person(name, age);
-        return person;
+        return new Person(name, age);
     }
 
-    public void addAnimal(Animal animal) throws Exception {
+    public void addAnimal(Animal animal) {
         if (mapPerson == null || mapPerson.isEmpty()) {
             System.out.println("ZooClub is empty!");
-            System.out.println();
         } else {
             Scanner scanner = new Scanner(System.in);
             System.out.print("Enter the person: ");
             String key = scanner.next();
-            mapPerson.get(findPerson(key)).add(animal);
+            if (findPerson(key) != null) {
+                mapPerson.get(findPerson(key)).add(animal);
+            } else {
+                System.out.println(key + " is absent at ZooClub!");
+            }
         }
     }
 
@@ -45,25 +45,26 @@ public class ClubService {
         String nickname = scanner.next();
         System.out.print("Enter type: ");
         String type = scanner.next();
-        Animal animal = new Animal(nickname, type);
-        return animal;
+        return new Animal(nickname, type);
     }
 
-    public void removePerson(String key) throws Exception {
+    public void removePerson(String key) {
         if (mapPerson == null || mapPerson.isEmpty()) {
             System.out.println("ZooClub is empty!");
-            System.out.println();
-        } else {
+        } else if (findPerson(key) != null) {
             mapPerson.remove(findPerson(key));
+        } else {
+            System.out.println(key + " is absent at ZooClub!");
         }
     }
 
-    public void removeAnimal(String key, String nickName) throws Exception {
+    public void removeAnimal(String key, String nickName) {
         if (mapPerson == null || mapPerson.isEmpty()) {
             System.out.println("ZooClub is empty!");
-            System.out.println();
-        } else {
+        } else if (findPerson(key) != null) {
             mapPerson.get(findPerson(key)).removeIf(animal -> animal.getNickname().equals(nickName));
+        }else {
+            System.out.println(key + " is absent at ZooClub!");
         }
     }
 
@@ -84,18 +85,15 @@ public class ClubService {
                     }
                     System.out.println();
                 }*/
-            mapPerson.entrySet()
-                    .stream()
-                    .forEach(k -> {
-                        System.out.print(k.getKey().getName() + ": ");
-                        k.getValue().forEach(v -> System.out.print(v.getTypeAnimal() + " " + v.getNickname()));
-                        System.out.println();
-                    });
-            System.out.println();
+            mapPerson.forEach((key, value) -> {
+                System.out.print(key.getName() + ": ");
+                value.forEach(v -> System.out.print(v.getTypeAnimal() + " " + v.getNickname()));
+                System.out.println();
+            });
         }
     }
 
-    private Person findPerson(String name) throws Exception {
+    private Person findPerson(String name) {
         /*for (Map.Entry<Person, List<Animal>> m : mapPerson.entrySet()) {
             if (m.getKey().getName().equals(key)) {
                 return m.getKey();
@@ -105,8 +103,6 @@ public class ClubService {
         return mapPerson.entrySet()
                 .stream()
                 .filter(k -> k.getKey().getName().equals(name))
-                .findFirst()
-                .orElseThrow(() -> new IncorectPersonException("Person " + name + " not found"))
-                .getKey();
+                .findFirst().map(Map.Entry::getKey).orElse(null);
     }
 }
