@@ -35,9 +35,8 @@ public class ReflectionService {
         Constructor<?> cons2 = personClassConstruct.getConstructor(int.class, String.class);
 
         Person person1 = (Person) cons1.newInstance();
-        Person person2 = (Person) cons2.newInstance(25, "Oleg");
-
         System.out.println(person1);
+        Person person2 = (Person) cons2.newInstance(25, "Oleg");
         System.out.println(person2);
         System.out.println();
     }
@@ -51,8 +50,10 @@ public class ReflectionService {
         Method getNameMethod = personClassConstruct.getDeclaredMethod("getName", null);
 
         setNameMethod.setAccessible(true);
-        setNameMethod.invoke(person, "Dima");
+
         System.out.println("*** Method execute***");
+        System.out.println(person);
+        setNameMethod.invoke(person, "Dima");
         System.out.println(getNameMethod.invoke(person));
         System.out.println(person);
     }
