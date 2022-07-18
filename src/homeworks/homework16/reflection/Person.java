@@ -4,12 +4,16 @@ public class Person {
     private int age;
     private String name;
 
-   public Person() {
+    private static int count = 0;
+
+    public Person() {
+        count++;
     }
 
-    public Person(int age,String name) {
+    public Person(int age, String name) {
         this.age = age;
         this.name = name;
+        count++;
     }
 
     public int getAge() {
@@ -32,7 +36,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "Person" + count + " {" +
                 "age=" + age +
                 ", name='" + name + '\'' +
                 '}';
