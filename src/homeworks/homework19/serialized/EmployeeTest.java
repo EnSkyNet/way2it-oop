@@ -23,7 +23,10 @@ public class EmployeeTest {
         methods.serialize(employees, filename);
         System.out.println(methods.deserialize(filename).toString());
 
-
+        Salary salary = new Salary();
+        salary.setSalary(2500);
+        methods.serialize(salary, filename);
+        System.out.println(methods.deserialize(filename).toString());
 
     }
 }
