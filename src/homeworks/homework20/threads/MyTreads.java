@@ -11,7 +11,6 @@ public class MyTreads extends Thread {
     @Override
     public void run() {
         try {
-            Thread.sleep(1000);
             numbersFibonacci(num);
         } catch (InterruptedException e) {
             System.out.println(e);
@@ -23,7 +22,10 @@ public class MyTreads extends Thread {
         int n0 = 1;
         int n1 = 1;
         int n2;
-        System.out.print(n0 + " " + n1 + " ");
+        Thread.sleep(1000);
+        System.out.print(n0 + " ");
+        Thread.sleep(1000);
+        System.out.print(n1 + " ");
         for (int i = 3; i <= numbers; i++) {
             Thread.sleep(1000);
             n2 = n0 + n1;

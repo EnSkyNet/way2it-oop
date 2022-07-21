@@ -13,7 +13,6 @@ public class RunnableThread implements Runnable {
     public void run() {
 
         try {
-            Thread.sleep(1000);
             printReversedFib(num);
         } catch (InterruptedException e) {
             System.out.println(e);
