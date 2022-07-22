@@ -19,14 +19,14 @@ public class RunnableThread implements Runnable {
         }
     }
 
-    public static int f(int number) {
+    private int f(int number) {
         if (number <= 1)
             return number;
         else
             return f(number - 1) + f(number - 2);
     }
 
-    public static void printReversedFib(int x) throws InterruptedException {
+    private   void printReversedFib(int x) throws InterruptedException {
         Thread.sleep(1000);
         if (x <= 1)
             System.out.print(f(x));

@@ -1,11 +1,11 @@
 package homeworks.homework19.cpu;
 
-public class CPU {
+class CPU {
     double price;
 
     public static class Processor{
-        public static int cores;
-        public String manufacturer;
+        private static int cores;
+        private String manufacturer;
 
         public Processor(int cores, String manufacturer) {
             this.cores = cores;
@@ -24,8 +24,8 @@ public class CPU {
         }
     }
     public static class Ram{
-        public double memory;
-        public String manufacturer;
+        private double memory;
+        private String manufacturer;
 
         public Ram(double memory, String manufacturer) {
             this.memory = memory;

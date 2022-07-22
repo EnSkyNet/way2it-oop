@@ -18,7 +18,7 @@ public class MyTreads extends Thread {
         System.out.println();
     }
 
-    public void numbersFibonacci(int numbers) throws InterruptedException {
+    private void numbersFibonacci(int numbers) throws InterruptedException {
         int n0 = 1;
         int n1 = 1;
         int n2;
