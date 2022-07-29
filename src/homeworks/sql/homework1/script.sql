@@ -1,3 +1,4 @@
+--hw1
 create database library;
 
 create table book (
@@ -22,6 +23,7 @@ values ('Last Night', 'Sorsbie', '01-07-2020', 'Boone Sorsbie', 'Carex backii Bo
 
 SELECT * FROM book;
 
+--hw2
 create table books (
                        id INT primary key generated always as identity,
                        title VARCHAR(120) NOT NULL ,
@@ -49,6 +51,31 @@ values ('The Face of Love', 'n/a', '19-07-2022', '324646795-1', 449, 'Léane', '
        ('Diamond Dogs', 'n/a', '08-07-2021', '423649276-8', 364, 'Amélie', 'Bowness', 'lbowness9@hexun.com', 29, '12-11-2018', 'First Bank');
 
 SELECT * FROM books;
+SELECT * FROM books WHERE id IN (5, 10, 13);
+SELECT * FROM books WHERE pages >150;
+SELECT * FROM books WHERE age > 30;
+SELECT * FROM books WHERE awards = 'NULL';
+SELECT * FROM books WHERE email = 'dmeacher5@1und1.de';
+SELECT * FROM books WHERE isbn = '030310984-X';
+SELECT * FROM books WHERE description = 'n/a';
+SELECT * FROM books WHERE pages >200 AND age > 40;
+SELECT * FROM books ORDER BY title;
+SELECT * FROM books ORDER BY email;
+SELECT * FROM books ORDER BY pages desc;
+SELECT DISTINCT description FROM books;
+SELECT DISTINCT first_name FROM books;
+SELECT * FROM books WHERE product_data > '2022-01-01';
+SELECT * FROM books WHERE product_data < '2021-01-01';
+
+--hw3
+SELECT * FROM books;
+UPDATE books
+SET first_name = 'Boris',
+second_name = 'Jonsonuik'
+WHERE id IN(3, 5);
+SELECT * FROM books;
+
+
 
 
 
